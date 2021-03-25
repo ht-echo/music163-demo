@@ -1,0 +1,38 @@
+.album {
+  padding: 20px 40px;
+  .ellipsis {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+  .album-new {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  .albms-info {
+    width: 150px;
+    margin-bottom: 20px;
+    cursor: pointer;
+    .albms-top {
+      position: relative;
+      width: 118px;
+      height: 100px;
+      background-position: 0px -570px;
+      .imgInfo {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100px;
+        height: 100px;
+      }
+    }
+    .albms-title {
+      font-size: 13px;
+      p {
+        .ellipsis;
+        max-width: 118px;
+      }
+    }
+  }
+}

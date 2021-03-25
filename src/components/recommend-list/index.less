@@ -1,0 +1,66 @@
+.contentInfo {
+  display: flex;
+  box-sizing: border-box;
+  border-left: 1px solid rgb(211, 211, 211);
+  border-right: 1px solid rgb(211, 211, 211);
+  background: #fff;
+  .content-left {
+    width: 730px;
+  }
+  .content-right {
+    padding: 0 20px;
+    border-left: 1px solid rgb(211, 211, 211);
+    box-sizing: border-box;
+    flex: 1;
+    .right-top {
+      margin: 0 -20px;
+      box-sizing: border-box;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      height: 126px;
+      font-size: 12px;
+      background-position: 0 0;
+    }
+    .singer {
+      .ant-card-head {
+        font-size: 12px;
+        font-weight: bold;
+      }
+      .ant-card-extra {
+        font-size: 13px;
+      }
+      .singer-item {
+        cursor: pointer;
+        background: #fafafa;
+        margin-bottom: 15px;
+        padding: 5px;
+        box-shadow: 1px 1px 0 rgb(233, 233, 233);
+        &:hover {
+          background: rgba(244, 244, 244);
+        }
+        .ant-card-meta-description {
+          font-size: 12px;
+        }
+      }
+    }
+    .anchor {
+      .anchor-item {
+        display: flex;
+        margin-bottom: 16px;
+        .item-text {
+          box-sizing: border-box;
+          padding-left: 10px;
+          overflow: hidden;
+          font-size: 13px;
+        }
+      }
+    }
+    .ant-card-meta-title {
+      font-weight: bold;
+      font-size: 15px;
+    }
+  }
+}

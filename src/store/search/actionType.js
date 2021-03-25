@@ -1,0 +1,4 @@
+export const CHANGE_SONG_LIST = 'search/CHANGE_SONG_LIST';
+export const CHANGE_SINGER_LIST = 'search/CHANGE_SINGER_LIST';
+export const CHANGE_ABLUMS_LIST = 'search/CHANGE_ABLUMS_LIST';
+export const CHANGE_PLAYLISTS_LIST = 'search/CHANGE_PLAYLISTS_LIST';
