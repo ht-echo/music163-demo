@@ -27,15 +27,11 @@ export default memo(function Songs() {
   // other hook
   useEffect(() => {
     dispatch(getSongListAction(SONG_LIST_LIMIT, 0));
-  }, [dispatch]);
-  // offset改变派发action
-  useEffect(() => {
-    dispatch(getSongListAction(SONG_LIST_LIMIT, offset));
-  }, [offset, dispatch]);
+  }, [offset]);
 
   return (
     <div className="w980 songs">
-      <PageTitle title="全部"  moreIsShow={false}  />
+      <PageTitle title="全部" moreIsShow={false} />
       <div className="songs-info">
         <HotCard singerData={songList} />
       </div>

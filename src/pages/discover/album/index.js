@@ -1,7 +1,7 @@
 import React, { memo, useRef, useState, useEffect } from 'react';
 import { shallowEqual, useDispatch, useSelector } from 'react-redux';
 
-import { getNewAlbumsAction } from '@/pages/discover/recommend/store/actionCreator';
+import { getNewAlbumsAction } from '@/store/recommend/actionCreator';
 import PageTitle from '@/components/pageTitle';
 import { history } from 'umi';
 
@@ -17,7 +17,7 @@ export default memo(function Album() {
 
   useEffect(() => {
     dispatch(getNewAlbumsAction());
-  }, [dispatch]);
+  }, []);
 
   return (
     <div className="album w980 pagebg page-header-noPadding">

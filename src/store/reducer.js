@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux-immutable';
 
-import { reducer as recommendReducer } from '@/pages/discover/recommend/store';
+import { reducer as recommendReducer } from './recommend';
 import { reducer as playerReducer } from './player';
 import { reducer as toplistReducer } from './toplist';
 import { reducer as songsReducer } from './songs';

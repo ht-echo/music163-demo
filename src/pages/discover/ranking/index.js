@@ -39,21 +39,19 @@ export default memo(function Ranking(props) {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(getToplistItemAction(currentToplistId));
-  }, [dispatch, currentToplistId]);
+  }, [currentToplistId]);
   useEffect(() => {
     // 榜单item
     dispatch(getToplistInfoAction());
-  }, [dispatch]);
+  }, []);
   useEffect(() => {
     // 派发榜单标题信息Action
     id = id ? id : currentToplistId;
     dispatch(getToplistTitleInfoAction(id));
     // console.log('index :>> ', index);
-  }, [currentToplistId, dispatch, props]);
+  }, [currentToplistId]);
 
   const [leftBg, setleftBg] = useState('#e6e6e6');
-  console.log('id :>> ', id);
-  console.log('toplistInfo :>> ', toplistInfo);
   let index = toplistInfo && toplistInfo.findIndex((v) => v.id == id);
   index = index === -1 ? 0 : index;
   let [topIndex, setTopIndex] = useState(index);

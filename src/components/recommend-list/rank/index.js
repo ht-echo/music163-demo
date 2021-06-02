@@ -3,7 +3,7 @@ import { shallowEqual, useDispatch, useSelector } from 'react-redux';
 
 import PageTitle from '@/components/pageTitle';
 import { List } from 'antd';
-import { getTopListAction } from '@/pages/discover/recommend/store/actionCreator';
+import { getTopListAction } from '@/store/recommend/actionCreator';
 import { getSongDetailAction } from '@/store/player';
 // import { setRankPlayAction } from '@/store/player/actionCreator';
 import { history } from 'umi';
@@ -45,7 +45,7 @@ export default memo(function Ranking() {
     dispatch(getTopListAction(19723756));
     dispatch(getTopListAction(3779629));
     dispatch(getTopListAction(2884035));
-  }, [dispatch]);
+  }, []);
   return (
     <div className="rank">
       <PageTitle title="榜单" pathname="/discover/ranking" />

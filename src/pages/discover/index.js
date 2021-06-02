@@ -1,39 +1,38 @@
-import React, { memo } from 'react';
-import { Tabs } from 'antd';
+import React, { memo, useState, useEffect } from 'react';
+import { Menu } from 'antd';
 
 // import { dicoverMenu } from '@/common/local-data';
 import './index.less';
 export default memo(function index(props) {
-  const dicoverMenu = props.route.routes.slice(1);
-  console.log('dicoverMenu :>> ', dicoverMenu);
-  const pathname = props.history.location.pathname;
-  const { TabPane } = Tabs;
-  const handleChangTab = (key) => {
-    props.history.push(key);
+  const [menuList, setMenuList] = useState([]);
+  const [currentMenu, setCurrentMenu] = useState(null);
+  const handleChangMenu = (e) => {
+    props.history.push(e.key);
+    setCurrentMenu(e.key);
   };
+  useEffect(() => {
+    const pathname = props.history.location.pathname;
+    const menu = props.route.routes.slice(1, 7);
+    setMenuList(menu);
+    setCurrentMenu(pathname);
+  }, []);
   return (
     <div className="discover">
-      <Tabs
-        tabBarGutter={60}
-        activeKey={pathname == '/discover' ? '/discover/recommend' : pathname}
-        onChange={handleChangTab}
-        tabBarStyle={{
-          background: 'rgb(194, 12, 12)',
-          color: '#fff',
-          fontSize: '12px',
-          paddingLeft: 'calc((100vw - 1100px) / 2 + 210px )',
-          marginBottom: 0,
-          boxSizing: 'border-box',
-        }}
+      <Menu
+        className="menuBox"
+        onClick={handleChangMenu}
+        selectedKeys={[currentMenu]}
+        mode="horizontal"
       >
-        {dicoverMenu.map((v, i) => {
+        {menuList.map((item) => {
           return (
-            <TabPane tab={i > 5 ? '' : v.title} key={v.path}>
-              <div>{props.children}</div>
-            </TabPane>
+            <Menu.Item key={item.path}>
+              <em className="menu-em">{item.title}</em>
+            </Menu.Item>
           );
         })}
-      </Tabs>
+      </Menu>
+      <div>{props.children}</div>
     </div>
   );
 });

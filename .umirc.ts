@@ -1,6 +1,8 @@
 import { defineConfig } from 'umi';
 
 export default defineConfig({
+  base: '/music163-demo/',
+  publicPath: process.env.NODE_ENV === 'production' ? '/music163-demo/' : '/',
   links: [{ rel: 'icon', href: '/favicon.png' }],
   title: 'music163 demo',
   nodeModulesTransform: {
@@ -62,7 +64,6 @@ export default defineConfig({
               component: '@/pages/discover/artist-info',
               title: '歌手详情',
             },
-
           ],
         },
         { path: '/friend', component: '@/pages/friend', title: '发现音乐' },
@@ -75,8 +76,6 @@ export default defineConfig({
       ],
     },
   ],
-  fastRefresh: {},
-  hash: true,
   history: {
     type: 'hash',
   },

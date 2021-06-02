@@ -1,6 +1,6 @@
 import React, { memo, useCallback, useEffect, useRef, useState } from 'react';
 import { shallowEqual, useDispatch, useSelector } from 'react-redux';
-import { getTopBannersAction } from './store/actionCreator';
+import { getTopBannersAction } from '@/store/recommend/actionCreator';
 
 import { Carousel } from 'antd';
 import Content from '@/components/recommend-list';
@@ -20,7 +20,7 @@ export default memo(function index(props) {
   useEffect(() => {
     // 在组件渲染之后发送网络请求
     dispatch(getTopBannersAction());
-  }, [dispatch]);
+  }, []);
   const { topBanners } = useSelector(
     (state) => ({
       // topBanners: state.get('recommend').get('topBanners')

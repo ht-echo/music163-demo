@@ -2,7 +2,7 @@ import React, { memo, useRef, useState, useEffect } from 'react';
 import { Carousel } from 'antd';
 import { LeftCircleOutlined, RightCircleOutlined } from '@ant-design/icons';
 import { shallowEqual, useDispatch, useSelector } from 'react-redux';
-import { getNewAlbumsAction } from '@/pages/discover/recommend/store/actionCreator';
+import { getNewAlbumsAction } from '@/store/recommend/actionCreator';
 
 import { history } from 'umi';
 import PageTitle from '@/components/pageTitle';
@@ -13,7 +13,7 @@ export default memo(function index() {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(getNewAlbumsAction());
-  }, [dispatch]);
+  }, []);
   const { newAlbums } = useSelector(
     (state) => ({
       newAlbums: state.getIn(['recommend', 'newAlbums']),

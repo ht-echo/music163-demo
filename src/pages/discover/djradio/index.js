@@ -32,7 +32,7 @@ export default memo(function DjRadio() {
     // 在组件渲染之后发送网络请求
     dispatch(getDjRecommendAction());
     dispatch(getDjToplistAction());
-  }, [dispatch]);
+  }, []);
 
   return (
     <div className="djradio pagebg w980">

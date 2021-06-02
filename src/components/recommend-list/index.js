@@ -1,7 +1,7 @@
 import React, { memo, useEffect } from 'react';
 import { shallowEqual, useDispatch, useSelector } from 'react-redux';
 import { SETTLE_SINGER_COUNT } from '@/common/constants.js';
-import { getSettleSingerAction } from '@/pages/discover/recommend/store/actionCreator';
+import { getSettleSingerAction } from '@/store/recommend/actionCreator';
 
 import { hotRadios } from '@/common/local-data.js';
 
@@ -27,7 +27,7 @@ export default memo(function content() {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(getSettleSingerAction(SETTLE_SINGER_COUNT));
-  }, [dispatch]);
+  }, []);
   return (
     <div className="contentInfo w980">
       <div className="content-left">

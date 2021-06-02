@@ -10,11 +10,11 @@ import { getSongDeailAction } from '@/store/playList/actionCreator';
 import './index.less';
 export default memo(function Playlist(props) {
   const { id, type } = qs.parse(props.location.search);
-  // other hook
+
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(getSongDeailAction(id, type));
-  }, [dispatch, id]);
+  }, [id]);
   const { songDetailInfo = {} } = useSelector(
     (state) => ({
       songDetailInfo: state.getIn(['songDetail', 'songDetailInfo']),

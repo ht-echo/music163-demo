@@ -6,19 +6,20 @@ import { singerCategories } from '@/common/local-data';
 import './index.less';
 export default memo(function SingerCategory() {
   const [curentIndex, setCurentIndex] = useState('0-0');
-  let pageData = { singerName: '推荐歌手' };
+  const [pageData, setPageData] = useState({ singerName: '推荐歌手' });
   const dispatch = useDispatch();
-  const handleClick = (index, i, item, v) => {
-    setCurentIndex(index + `-` + i);
-    pageData = { ...{ area: item.area, singerName: v.name }, ...v };
-
-    // console.log('pageData :>> ', pageData);
-    dispatch(getSingerCategoryAction(pageData));
-  };
   useEffect(() => {
     // 在组件渲染之后发送网络请求
     dispatch(getSingerCategoryAction(pageData));
-  }, [dispatch]);
+  }, []);
+  const handleClick = (index, i, item, v) => {
+    console.log('index :>> ', index);
+    setCurentIndex(index + `-` + i);
+    const pageData = { ...{ area: item.area, singerName: v.name }, ...v };
+    setPageData(pageData);
+
+    dispatch(getSingerCategoryAction(pageData));
+  };
   return (
     <div className="singer-category">
       {singerCategories &&

@@ -37,7 +37,6 @@ export default memo(function HotCard(props) {
                 <div className="coverBox">
                   <img
                     style={{ width: 140, height: 140 }}
-                    alt={v.name}
                     src={v.picUrl || v.coverImgUrl}
                   />
                   <div className="playNav sprite_cover">

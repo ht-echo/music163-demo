@@ -3,7 +3,7 @@ import PageTitle from '@/components/pageTitle';
 import HotCard from '@/components/hot-card';
 import { shallowEqual, useDispatch, useSelector } from 'react-redux';
 import { HOT_RECOMMEND_LIMIT } from '@/common/constants';
-import { getHostBannersAction } from '@/pages/discover/recommend/store/actionCreator';
+import { getHostBannersAction } from '@/store/recommend/actionCreator';
 
 import './index.less';
 export default memo(function Hot(props) {
@@ -11,7 +11,7 @@ export default memo(function Hot(props) {
 
   useEffect(() => {
     dispatch(getHostBannersAction(HOT_RECOMMEND_LIMIT));
-  }, [dispatch]);
+  }, []);
 
   const { hotRecommends } = useSelector(
     (state) => ({

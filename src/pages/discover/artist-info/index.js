@@ -22,7 +22,7 @@ export default memo(function ArtistInfo(props) {
   useEffect(() => {
     // 在组件渲染之后发送网络请求
     dispatch(getSingerInfoAction(id));
-  }, [dispatch,id]);
+  }, [id]);
 
   return (
     <div className="artist-info w980 pagebg">
@@ -32,7 +32,10 @@ export default memo(function ArtistInfo(props) {
           <small>{songsData.artist && songsData.artist.alias[0]}</small>
         </div>
         <div className="bg">
-          <img src={songsData.artist && songsData.artist.picUrl+'?param=640y300'} alt="" />
+          <img
+            src={songsData.artist && songsData.artist.picUrl + '?param=640y300'}
+            alt=""
+          />
           <div className="mainPage commonBtn"></div>
           <div className="collect commonBtn"></div>
         </div>
