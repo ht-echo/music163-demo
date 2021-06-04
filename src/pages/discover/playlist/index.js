@@ -33,7 +33,7 @@ export default memo(function Playlist(props) {
           titleInfo={songDetailInfo.playlist}
         />
       </div>
-      <div className="right">推荐列表</div>
+      {/* <div className="right">推荐列表</div> */}
     </div>
   );
 });

@@ -1,8 +1,8 @@
 .artist-info {
   display: flex;
   .left {
-    width: 709px;
-    padding: 20px 30px 40px 39px;
+    flex: 1;
+    padding: 2vw;
     box-sizing: border-box;
     border-right: 1px solid #ededed;
     .singerName {
@@ -20,22 +20,29 @@
       }
     }
     .bg {
-      width: 640px;
-      height: 300px;
+      width: 100%;
+      height: 25vw;
       position: relative;
+      @media (max-width: 540px) {
+        height: 45vw;
+      }
+
       img {
-        width: 640px;
-        height: 300px;
+        width: 100%;
+        height: 100%;
       }
       .commonBtn {
         position: absolute;
-        bottom: 18px;
+        bottom: 1vw;
         background: url('~@/assets/img/sprite_icon.png');
         height: 32px;
+        @media (max-width: 540px) {
+         display: none;
+        }
       }
       .mainPage {
         width: 96px;
-        right: 116px;
+        right: 0.5vw;
         background-position: 0 -1156px;
       }
       .collect {
@@ -43,6 +50,12 @@
         width: 76px;
         background-position: 0 -500px;
       }
+    }
+  }
+  .right {
+    width: 30%;
+    @media (max-width: 540px) {
+      display: none;
     }
   }
   .ant-tabs-card > .ant-tabs-nav .ant-tabs-tab {

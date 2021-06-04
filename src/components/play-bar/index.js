@@ -18,7 +18,7 @@ export default memo(function PlayBar() {
     bottom: 0,
     left: 0,
     width: '100%',
-    height: '70px',
+    height: '60px',
     zIndex: 99999,
   };
   const [isPlay, setIsPlay] = useState(false);

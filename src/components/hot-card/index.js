@@ -30,15 +30,11 @@ export default memo(function HotCard(props) {
               key={v.id}
               // loading={true}
               className="card-info"
-              style={{ width: 140 }}
               bodyStyle={{ padding: 0 }}
               bordered={false}
               cover={
                 <div className="coverBox">
-                  <img
-                    style={{ width: 140, height: 140 }}
-                    src={v.picUrl || v.coverImgUrl}
-                  />
+                  <img className="coverImg" src={v.picUrl || v.coverImgUrl} />
                   <div className="playNav sprite_cover">
                     <span>
                       <CustomerServiceOutlined />

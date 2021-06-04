@@ -65,7 +65,7 @@ export default memo(function Ranking(props) {
             <div className="header-info" key={item.id || i}>
               {(i === 0 || i === 4) && (
                 <div className="title">
-                  {i === 0 ? '云音乐特色榜' : i === 4 ? '全球媒体榜' : ''}
+                  {i === 0 ? '特色榜' : i === 4 ? '全球榜' : ''}
                 </div>
               )}
               <List.Item

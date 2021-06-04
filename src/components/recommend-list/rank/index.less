@@ -11,6 +11,9 @@
       }
       .info-item {
         max-width: 230px;
+        @media (max-width: 540px) {
+          width: calc(50vw - 10px);
+        }
         &:nth-child(n) {
           background: #e8e8e8;
         }

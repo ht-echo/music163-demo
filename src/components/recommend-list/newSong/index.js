@@ -9,10 +9,23 @@ import PageTitle from '@/components/pageTitle';
 import './index.less';
 export default memo(function index() {
   const [arrowShow, setArrowShow] = useState(false);
+  const [ablumNum, setAblumNum] = useState(5);
   const bannerRef = useRef();
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(getNewAlbumsAction());
+  }, []);
+  useEffect(() => {
+    const width = window.innerWidth;
+    if (width > 540) {
+      setAblumNum(5);
+    } else {
+      setAblumNum(3);
+    }
+    window.addEventListener('resize', handleResize);
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
   }, []);
   const { newAlbums } = useSelector(
     (state) => ({
@@ -20,6 +33,14 @@ export default memo(function index() {
     }),
     shallowEqual,
   );
+  const handleResize = (e) => {
+    const width = e.target.innerWidth;
+    if (width > 540) {
+      setAblumNum(5);
+    } else {
+      setAblumNum(3);
+    }
+  };
   return (
     <div className="newSong">
       <PageTitle title="新碟上架" />
@@ -33,11 +54,13 @@ export default memo(function index() {
             return (
               <div className="info-box" key={index}>
                 {newAlbums &&
-                  newAlbums.slice(item * 5, item * 5 + 5).map((v) => {
+                  newAlbums.slice(item * 5, item * 5 + ablumNum).map((v) => {
                     return (
                       <div
                         onClick={() => {
-                          history.push(`/discover/playlist?id=${v.id}&type=album`);
+                          history.push(
+                            `/discover/playlist?id=${v.id}&type=album`,
+                          );
                         }}
                         key={v.id}
                         className="albms"

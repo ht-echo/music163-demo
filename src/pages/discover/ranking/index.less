@@ -1,16 +1,22 @@
 .ranking {
   display: flex;
-  border-left: 1px solid rgb(211, 211, 211);
-  border-right: 1px solid rgb(211, 211, 211);
+  // border-left: 1px solid rgb(211, 211, 211);
+  // border-right: 1px solid rgb(211, 211, 211);
   box-sizing: border-box;
   height: 100%;
   min-height: 600px;
-
+  @media (max-width: 540px) {
+    // overflow: hidden;
+  }
   .rank-left {
     padding-top: 20px;
+    width: 230px;
     border-right: 1px solid rgb(211, 211, 211);
     box-sizing: border-box;
-    width: 240px;
+    @media (max-width: 540px) {
+      width: 80px;
+    }
+
     background: rgb(249, 249, 249);
     .header-info {
       .title {
@@ -20,12 +26,26 @@
         padding-left: 20px;
         box-sizing: border-box;
         margin-top: 10px;
+        @media (max-width: 540px) {
+          text-align: center;
+          padding-left: 0;
+          display: flex;
+          justify-content: center;
+        }
+      }
+      @media (max-width: 540px) {
+        .ant-list-item-meta-content {
+          display: none;
+        }
       }
     }
     .topItem {
       cursor: pointer;
       padding-left: 16px;
       padding-right: 16px;
+      @media (max-width: 540px) {
+        flex-direction: column;
+      }
       &:hover {
         background-color: rgb(244, 242, 242);
       }

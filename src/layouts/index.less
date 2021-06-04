@@ -32,7 +32,33 @@
       }
     }
   }
+  .mobile-header {
+    height: 40px;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 10px;
+    margin: 0 10px;
+    background: #c20c0c;
+    color: #fff;
+    font-size: 14px;
+    display: none;
+    @media (max-width: 540px) {
+      display: flex;
+    }
+    h1 {
+      color: #fff;
+      font-size: 16px;
+    }
+  }
   .content {
     flex: 1;
+  }
+  @media (max-width: 540px) {
+    .header,
+    .downloadBg,
+    .content-right,
+    .footer-content {
+      display: none !important;
+    }
   }
 }

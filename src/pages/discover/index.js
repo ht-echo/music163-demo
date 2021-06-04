@@ -32,7 +32,7 @@ export default memo(function index(props) {
           );
         })}
       </Menu>
-      <div>{props.children}</div>
+      <div className='childrenPage'>{props.children}</div>
     </div>
   );
 });

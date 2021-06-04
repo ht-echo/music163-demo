@@ -7,6 +7,11 @@
     margin-bottom: 20px;
     cursor: pointer;
     margin-right: 10px;
+    width: 140px;
+    .coverImg {
+      width: 140px;
+      height: 140px;
+    }
   }
   .title {
     font-size: 13px;
@@ -34,6 +39,23 @@
       justify-content: space-between;
       box-sizing: border-box;
       padding: 0 10px;
+    }
+  }
+}
+@media (max-width: 540px) {
+  .recommend {
+    .hot-card {
+      max-height: 320px;
+      overflow: hidden;
+    }
+  }
+  .hot-card {
+    .card-info {
+      width: 100px !important;
+      .coverImg {
+        width: 100px;
+        height: 100px !important;
+      }
     }
   }
 }

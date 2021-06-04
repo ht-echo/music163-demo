@@ -6,14 +6,6 @@ import { Carousel } from 'antd';
 import Content from '@/components/recommend-list';
 import './index.less';
 export default memo(function index(props) {
-  const contentStyle = {
-    height: '270px',
-    width: '730px',
-    color: '#fff',
-    lineHeight: '270px',
-    textAlign: 'center',
-    background: '#364d79',
-  };
   const bannerRef = useRef();
   const [currentIndex, setCurrentIndex] = useState(0);
   const dispatch = useDispatch();
@@ -46,27 +38,28 @@ export default memo(function index(props) {
         }}
       >
         <div className="boxs w980">
-          <Carousel
-            style={{ width: '730px' }}
-            autoplay
-            effect="fade"
-            autoplaySpeed={5000}
-            ref={bannerRef}
-            beforeChange={bannerChange}
-          >
-            {topBanners &&
-              topBanners.map((item) => {
-                return (
-                  <div style={contentStyle} key={item.imageUrl}>
-                    <img
-                      style={{ width: '100%' }}
-                      src={item.imageUrl}
-                      alt={item.typeTitle}
-                    />
-                  </div>
-                );
-              })}
-          </Carousel>
+          <div className="boxsInfo">
+            <Carousel
+              autoplay
+              effect="fade"
+              autoplaySpeed={5000}
+              ref={bannerRef}
+              beforeChange={bannerChange}
+            >
+              {topBanners &&
+                topBanners.map((item) => {
+                  return (
+                    <div className="imgBox" key={item.imageUrl}>
+                      <img
+                        style={{ width: '100%', height: '100%' }}
+                        src={item.imageUrl}
+                        alt={item.typeTitle}
+                      />
+                    </div>
+                  );
+                })}
+            </Carousel>
+          </div>
           <a href="#/download" className="downloadBg"></a>
           <div className="cortorl-btns">
             <div

@@ -1,4 +1,4 @@
-import React, { memo } from 'react';
+import React, { memo, useState, useEffect } from 'react';
 import { PageHeader, Table } from 'antd';
 import { formatMinuteSecond } from '@/utils/format-utils.js';
 
@@ -10,18 +10,17 @@ import { useDispatch } from 'react-redux';
 import './index.less';
 export default memo(function InfoList(props) {
   const dispatch = useDispatch();
-
+  const [columnsData, setColumnsData] = useState([]);
   const { tableData, titleInfo } = props;
-
   const columns = [
     {
       title: '',
       dataIndex: 'index',
       key: 'index',
+      width: 50,
     },
     {
-      title: '标题',
-      width: 300,
+      title: '歌曲名',
       dataIndex: 'title',
       key: 'title',
       ellipsis: true,
@@ -37,20 +36,42 @@ export default memo(function InfoList(props) {
       dataIndex: 'singerName',
       key: 'singerName',
       ellipsis: true,
+      width: 120,
     },
   ];
+  useEffect(() => {
+    const width = window.innerWidth;
+    if (width > 540) {
+      columns[2].width = 150;
+      setColumnsData(columns);
+    } else {
+      columns[2].width = 60;
+      setColumnsData(columns.slice(0, 3));
+    }
+    window.addEventListener('resize', handleResize);
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+  const handleResize = (e) => {
+    const width = e.target.innerWidth;
+    if (width > 540) {
+      columns[2].width = 150;
+      setColumnsData(columns);
+    } else {
+      columns[2].width = 60;
+      setColumnsData(columns.slice(0, 3));
+    }
+  };
   let dataSource = [];
   dataSource =
     tableData &&
-    tableData.slice(0, 100).map((v, i) => {
+    tableData.slice(0, 50).map((v, i) => {
       return {
         key: v.id || i,
         index: i + 1,
         title: (
           <div className="title">
-            {i < 3 && (
-              <img src={v.al.picUrl} alt="" style={{ width: 50, height: 50 }} />
-            )}
             <PlayCircleOutlined
               style={{
                 padding: '0 10px',
@@ -101,14 +122,14 @@ export default memo(function InfoList(props) {
               height: '100%',
             }}
           >
-            {(titleInfo &&`播放：`+ titleInfo.playCount+`次`) || ''}
+            {(titleInfo && `播放：` + titleInfo.playCount + `次`) || ''}
           </span>
         }
       />
       <Table
         rowClassName="list-row"
         pagination={false}
-        columns={columns}
+        columns={columnsData}
         dataSource={dataSource}
       />
     </div>

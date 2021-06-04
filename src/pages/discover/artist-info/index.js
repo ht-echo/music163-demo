@@ -56,7 +56,7 @@ export default memo(function ArtistInfo(props) {
           </Tabs>
         </div>
       </div>
-      <div className="right">11111111111</div>
+      <div className="right"></div>
     </div>
   );
 });

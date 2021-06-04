@@ -4,8 +4,23 @@
   justify-content: space-between;
   .info {
     flex: 1;
-    margin-right: 4px;
+    // margin-right: 4px;
     padding-bottom: 26px;
+    @media (max-width: 540px) {
+      flex: none;
+      width: 48%;
+      max-width: 120px;
+      padding-bottom: 30px;
+      .avator,
+      img {
+        width: 100% !important;
+        height: 100% !important;
+      }
+      .title {
+        padding-top: 5px !important;
+        padding-right: 5px !important;
+      }
+    }
     .title {
       display: flex;
       align-items: center;

@@ -81,8 +81,8 @@ export default defineConfig({
   },
   proxy: {
     '/api': {
-      // target: 'http://123.57.176.198:3000',
-      target: 'https://vercel-cloudmusic.vercel.app',
+      target: 'http://123.57.176.198:3000',
+      // target: 'https://vercel-cloudmusic.vercel.app',
 
       pathRewrite: { '^/api': '' },
       changeOrigin: true,

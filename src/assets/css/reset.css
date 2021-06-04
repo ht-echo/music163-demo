@@ -96,15 +96,6 @@ button {
   overflow: hidden;
 }
 
-.w1100 {
-  width: 1100px;
-  margin: 0 auto;
-}
-
-.w980 {
-  width: 980px;
-  margin: 0 auto;
-}
 
 .text-indent {
   text-indent: -9999px;
@@ -208,12 +199,88 @@ button {
 .pagebg {
   background: #fff;
   min-height: 500px;
-  border-left: 1px solid #d3d3d3;
-  border-right: 1px solid #d3d3d3;
+
   box-sizing: border-box;
 
 }
 
 .page-header-noPadding .ant-page-header {
   padding: 16px 0 !important;
+}
+
+.w1100 {
+  width: 1100px;
+  margin: 0 auto;
+}
+
+.w980 {
+  width: 980px;
+  margin: 0 auto;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+@media (max-width: 540px) {
+
+  .w1100,
+  .w980 {
+    width: 100%;
+  }
+
+  .ant-page-header,
+  .hot-card,
+  .rank-info,
+  .album {
+    padding: 10px 0 !important;
+
+  }
+
+  .recommend .cortorl-btns .btn:nth-child(2) {
+    display: none;
+  }
+
+  .rank-info {
+    padding-right: 0 !important;
+  }
+
+  .rank-left {
+    margin-left: -10px;
+  }
+
+  .album .album-new {
+    justify-content: space-around !important;
+  }
+
+  .album .albms-info {
+    width: auto !important;
+  }
+
+  .songs {
+    padding: 0 !important;
+  }
+
+  .songs .songs-info .card-info:last-child {
+    display: none;
+  }
+
+  .rank-info .ant-list:last-child,
+  .hot .ant-page-header-heading-sub-title,
+  .menuBox,
+  .artist-info .ant-tabs-nav {
+    display: none !important;
+  }
+
+  .ranking .info-list {
+    padding-left: 10px;
+  }
+
+  .newSong .info {
+    margin: 0 !important;
+  }
+
+  .contentInfo .content-left {
+    width: 100% !important;
+  }
 }

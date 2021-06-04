@@ -1,12 +1,19 @@
 .info-top {
   display: flex;
   padding-bottom: 50px;
+  @media (max-width: 540px) {
+    padding-bottom: 30px;
+  }
   img {
     width: 158px;
     height: 158px;
     margin-right: 20px;
     padding: 5px;
     border: 1px solid #ccc;
+    @media (max-width: 540px) {
+      width: 120px;
+      height: 120px;
+    }
   }
   .top-detail {
     display: flex;
@@ -16,6 +23,9 @@
     .btns {
       display: flex;
       box-sizing: border-box;
+      @media (max-width: 540px) {
+        display: none;
+      }
       button {
         font-size: 13px;
         padding: 4px 8px;
