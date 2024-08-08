@@ -4,8 +4,8 @@ import '@@/core/devScripts';
 import { plugin } from './core/plugin';
 import './core/pluginRegister';
 import { createHistory } from './core/history';
-import { ApplyPluginsType } from 'E:/Z_projects/C_react/pc-music163/node_modules/umi/node_modules/@umijs/runtime';
-import { renderClient } from 'E:/Z_projects/C_react/pc-music163/node_modules/umi/node_modules/@umijs/renderer-react/dist/index.js';
+import { ApplyPluginsType } from 'E:/projects/pc-music163/node_modules/@umijs/runtime';
+import { renderClient } from 'E:/projects/pc-music163/node_modules/@umijs/preset-built-in/node_modules/@umijs/renderer-react/dist/index.js';
 import { getRoutes } from './core/routes';
 
 

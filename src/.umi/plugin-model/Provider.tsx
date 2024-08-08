@@ -1,13 +1,13 @@
 // @ts-nocheck
 import React from 'react';
-import initialState from 'E:/Z_projects/C_react/pc-music163/src/.umi/plugin-initial-state/models/initialState';
+import initialState from 'E:/projects/pc-music163/src/.umi/plugin-initial-state/models/initialState';
 
 // @ts-ignore
-import Dispatcher from 'E:/Z_projects/C_react/pc-music163/node_modules/@umijs/plugin-model/lib/helpers/dispatcher';
+import Dispatcher from 'E:/projects/pc-music163/node_modules/@umijs/plugin-model/lib/helpers/dispatcher';
 // @ts-ignore
-import Executor from 'E:/Z_projects/C_react/pc-music163/node_modules/@umijs/plugin-model/lib/helpers/executor';
+import Executor from 'E:/projects/pc-music163/node_modules/@umijs/plugin-model/lib/helpers/executor';
 // @ts-ignore
-import { UmiContext } from 'E:/Z_projects/C_react/pc-music163/node_modules/@umijs/plugin-model/lib/helpers/constant';
+import { UmiContext } from 'E:/projects/pc-music163/node_modules/@umijs/plugin-model/lib/helpers/constant';
 
 export const models = { '@@initialState': initialState,  };
 

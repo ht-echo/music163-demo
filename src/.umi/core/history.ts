@@ -1,5 +1,5 @@
 // @ts-nocheck
-import { createHashHistory, History } from 'E:/Z_projects/C_react/pc-music163/node_modules/umi/node_modules/@umijs/runtime';
+import { createHashHistory, History } from 'E:/projects/pc-music163/node_modules/@umijs/runtime';
 
 let options = {
   "basename": "/music163-demo/"

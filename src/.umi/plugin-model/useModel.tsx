@@ -1,9 +1,9 @@
 // @ts-nocheck
 import { useState, useEffect, useContext, useRef } from 'react';
 // @ts-ignore
-import isEqual from 'E:/Z_projects/C_react/pc-music163/node_modules/@umijs/plugin-model/node_modules/fast-deep-equal/index.js';
+import isEqual from 'E:/projects/pc-music163/node_modules/fast-deep-equal/index.js';
 // @ts-ignore
-import { UmiContext } from 'E:/Z_projects/C_react/pc-music163/node_modules/@umijs/plugin-model/lib/helpers/constant';
+import { UmiContext } from 'E:/projects/pc-music163/node_modules/@umijs/plugin-model/lib/helpers/constant';
 import { Model, models } from './Provider';
 
 export type Models<T extends keyof typeof models> = Model<T>[T]

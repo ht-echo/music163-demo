@@ -1,3 +1,3 @@
 // @ts-nocheck
 // @ts-ignore
-export { Helmet } from 'E:/Z_projects/C_react/pc-music163/node_modules/react-helmet';
+export { Helmet } from 'E:/projects/pc-music163/node_modules/react-helmet';

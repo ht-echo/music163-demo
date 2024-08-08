@@ -1,6 +1,6 @@
 // @ts-nocheck
 import React from 'react';
-import { ApplyPluginsType } from 'E:/Z_projects/C_react/pc-music163/node_modules/umi/node_modules/@umijs/runtime';
+import { ApplyPluginsType } from 'E:/projects/pc-music163/node_modules/@umijs/runtime';
 import * as umiExports from './umiExports';
 import { plugin } from './plugin';
 

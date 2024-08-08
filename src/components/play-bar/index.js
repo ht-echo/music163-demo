@@ -18,7 +18,7 @@ export default memo(function PlayBar() {
     bottom: 0,
     left: 0,
     width: '100%',
-    height: '60px',
+    height: '70px',
     zIndex: 99999,
   };
   const [isPlay, setIsPlay] = useState(false);
@@ -43,9 +43,6 @@ export default memo(function PlayBar() {
       img: currentSong.al.picUrl,
       id: currentSong.id,
     };
-    setTimeout(() => {
-      dispatch(getSongDetailAction(currentSong.id, null));
-    }, 200);
   }
   // dispatch(setRankPlayAction(false));
   // }
@@ -60,10 +57,6 @@ export default memo(function PlayBar() {
       id: v.id,
     };
   });
-  useEffect(() => {
-    dispatch(getSongDetailAction(167876, null));
-    // console.log('playList :>> ', playList);
-  }, [dispatch]);
 
   return (
     <div style={playStyle}>
@@ -76,12 +69,13 @@ export default memo(function PlayBar() {
         currentAudio={currentSongPlay}
         data={playData || []}
         onAudioChange={(id) => {
-          dispatch(getLyricAction(id));
-          if (id !== 167876) {
+          if (id !== 1363948882) {
+            console.log(`onAudioChange :`, id);
+            dispatch(getLyricAction(id));
+
             const audio = document.querySelector('audio');
-            setIsPlay(false);
+            setIsPlay(true);
             setTimeout(() => {
-              setIsPlay(true);
               audio.play();
             }, 100);
           }

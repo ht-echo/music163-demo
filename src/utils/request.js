@@ -4,12 +4,30 @@ import NProgress from 'nprogress'; // progress bar
 import 'nprogress/nprogress.css'; // progress bar style
 NProgress.configure({ showSpinner: false });
 
+let request = new XMLHttpRequest();
+let ipData = '';
+request.open('GET', 'https://api.ipify.org?format=json', true);
+request.onload = async function () {
+  if (request.status >= 200 && request.status < 400) {
+    ipData = await JSON.parse(request.responseText);
+    // console.log(ipData.ip);
+
+    request.onerror = function () {
+      console.error('Error occurred during the network request');
+    };
+    request.send();
+  }
+};
+
 const instance = axios.create({
   // 默认的配置
   baseURL: BASE_URL, // -> http://123.57.176.198:3000/banner
   timeout: TIMEOUT, // -> 5000
   headers: {},
   withCredentials: true,
+  params: {
+    // realIP: ipData.ip
+  },
 });
 
 instance.interceptors.request.use(
@@ -46,5 +64,4 @@ instance.interceptors.response.use(
     return err;
   },
 );
-
 export default instance;
